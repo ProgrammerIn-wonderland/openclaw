@@ -13,6 +13,7 @@ export type AuthChoiceGroupId =
   | "google"
   | "copilot"
   | "openrouter"
+  | "puter"
   | "ai-gateway"
   | "moonshot"
   | "zai"
@@ -151,6 +152,10 @@ export function buildAuthChoiceOptions(params: {
   options.push({
     value: "puter-web",
     label: "Web login (recommended)",
+  });
+  options.push({
+    value: "puter-api-key",
+    label: "API key (manual)",
   });
   options.push({
     value: "ai-gateway-api-key",
