@@ -19,6 +19,12 @@ export const PUTER_DEFAULT_MODEL_ID = "anthropic:anthropic/claude-haiku-4-5";
 export const PUTER_DEFAULT_MODEL_REF = `puter/${PUTER_DEFAULT_MODEL_ID}`;
 export const PUTER_DEFAULT_CONTEXT_WINDOW = 128000;
 export const PUTER_DEFAULT_MAX_TOKENS = 8192;
+export const PUTER_DEFAULT_COST = {
+  input: 0,
+  output: 0,
+  cacheRead: 0,
+  cacheWrite: 0,
+};
 
 // Pricing: MiniMax doesn't publish public rates. Override in models.json for accurate costs.
 export const MINIMAX_API_COST = {
@@ -94,5 +100,17 @@ export function buildMoonshotModelDefinition(): ModelDefinitionConfig {
     cost: MOONSHOT_DEFAULT_COST,
     contextWindow: MOONSHOT_DEFAULT_CONTEXT_WINDOW,
     maxTokens: MOONSHOT_DEFAULT_MAX_TOKENS,
+  };
+}
+
+export function buildPuterModelDefinition(modelId: string): ModelDefinitionConfig {
+  return {
+    id: modelId,
+    name: modelId,
+    reasoning: false,
+    input: ["text"],
+    cost: PUTER_DEFAULT_COST,
+    contextWindow: PUTER_DEFAULT_CONTEXT_WINDOW,
+    maxTokens: PUTER_DEFAULT_MAX_TOKENS,
   };
 }
