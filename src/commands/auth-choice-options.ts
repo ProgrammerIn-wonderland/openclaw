@@ -1,7 +1,7 @@
 import type { AuthProfileStore } from "../agents/auth-profiles.js";
-import type { AuthChoice, AuthChoiceGroupId } from "./onboard-types.js";
 import { AUTH_CHOICE_LEGACY_ALIASES_FOR_CLI } from "./auth-choice-legacy.js";
 import { ONBOARD_PROVIDER_AUTH_FLAGS } from "./onboard-provider-auth-flags.js";
+import type { AuthChoice, AuthChoiceGroupId } from "./onboard-types.js";
 
 export type { AuthChoiceGroupId };
 
@@ -97,7 +97,7 @@ const AUTH_CHOICE_GROUP_DEFS: {
   },
   {
     value: "puter",
-    label: "Puter",
+    label: "puter.com",
     hint: "Web login or API key",
     choices: ["puter-web", "puter-api-key"],
   },
@@ -231,12 +231,12 @@ const BASE_AUTH_CHOICE_OPTIONS: ReadonlyArray<AuthChoiceOption> = [
   { value: "chutes", label: "Chutes (OAuth)" },
   {
     value: "puter-web",
-    label: "Puter web login",
+    label: "puter.com web login",
     hint: "Open browser, sign in, then paste API key",
   },
   {
     value: "puter-api-key",
-    label: "Puter API key",
+    label: "puter.com API key",
   },
   {
     value: "vllm",
